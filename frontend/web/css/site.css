@@ -1,0 +1,117 @@
+.header_top{
+    background: #f7f7f7;
+    height: 40px;
+    align-items: center;
+}
+
+.header_contaner{
+    display: flex;
+    flex-flow: row;
+    position: relative;
+    left: 21%;
+    bottom: -20%;
+    align-items: center;
+    max-width: 1119px;
+    justify-content: space-between;
+
+
+}
+body{
+    font-family: SF Pro Display,sans-serif;
+}
+
+A {
+    color: red;
+    font-size: 14px!important;
+    line-height: 17px!important;
+    color: #6d6d6d!important;
+    transition: all .2s ease-in-out!important;
+    text-decoration: none!important;
+}
+
+A:active {
+    color: red!important; /* Цвет активных ссылок */
+}
+html{
+    ine-height: 1.15;
+}
+input {
+    display: block;
+    outline: none;
+    padding: 10px;
+    border: 1px solid rgba(163, 162, 161, .5);
+    border-radius: 3px;
+    margin: 0;
+    background: transparent;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 1170px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.headedr_logo{
+    width: 177px;
+
+}
+.header-group{
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+
+}
+.header_navbar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row;
+}
+.search{
+    height: 60px;
+    width: 100%;
+    position: relative;
+    z-index: 50;
+    background: #89BF15;
+    box-shadow: 0 4px 4px;
+}
+.search_container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+.search_form {
+    width: 56%;
+    display: flex;
+    flex-flow: row;
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid #e6e4e1;
+
+
+
+}
+.search_field{
+    position: relative;
+    border: 1px solid #e6e4e1;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    resize: none;
+    border-radius: 3px;
+}
+
+
