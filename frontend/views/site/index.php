@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Комиссионный магазин «MoneyShop24»';
 ?>
 <div class="site-index">
 

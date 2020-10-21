@@ -39,7 +39,7 @@ AppAsset::register($this);
 </div>
 <div class="header">
     <div class="header-group">
-        <div class="header-logo"><img src="images/MoneyShoplogo1.png" class="headedr_logo" alt=""></div>
+        <div class="header-logo"><img src="images/logo.gif" class="headedr_logo" alt=""></div>
         <div class="header-cities">Все города</div>
     </div>
     <div class="header_navbar">
@@ -62,7 +62,7 @@ AppAsset::register($this);
             <div class="search_form">
                     <form class="search_field" onsubmit="return false;" am-dropdown-header="search">
                             <input type="text" data-value="" value="" placeholder="Я хочу купить...">
-                        <button>Найти</button>
+                        <button class="search_button">Найти</button>
                     </form>
                     <div am-dropdown-content="search" align="left">
                         <div am-dropdown-wrapper="search">
@@ -91,9 +91,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 
