@@ -1,3 +1,13 @@
+.item_box{
+    display: flex;
+    flex-flow: row;
+}
+.index_slider{
+    padding: 10px;
+}
+.index_catalog{
+    padding: 10px;
+}
 .header_top{
     background: #f7f7f7;
     height: 40px;
@@ -110,9 +120,11 @@ button{
     position: relative;
 
     bottom: -17%;
-
-
-
+}
+.search_catalog_show{
+    position: relative;
+    left: -63%;
+    bottom: -18%;
 }
 .search_field{
     position: relative;
@@ -125,5 +137,6 @@ button{
     resize: none;
     border-radius: 3px;
 }
+
 
 

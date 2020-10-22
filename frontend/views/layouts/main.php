@@ -53,7 +53,7 @@ AppAsset::register($this);
 <div class="search">
     <div class="search_container">
             <div class="search_catalog">
-                <a href="/catalog/" am-link="catalog">
+                <a href="/catalog/" am-link="catalog" class="search_catalog_show">
                     <span am-icon="menuM_catalogButton"></span>
                     <span>Каталог</span>
                     <span am-icon="menuM_catalogArrow"></span>

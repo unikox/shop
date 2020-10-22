@@ -5,12 +5,14 @@
 
 use backend\assets\AppAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+$this->title = 'Комиссионный магазин «MoneyShop24»'
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -36,7 +38,20 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+
+        $menuItems[] = ['label' => 'Магазин', 'items' =>  [
+            [ 'label' => 'Менеджер точек продаж', 'url' => Url::to('index.php?r=shops')] ,
+            [ 'label' => 'Категории товара', 'url' => Url::to('index.php?r=catproduct')] ,
+            [ 'label' => 'Товары', 'url' => Url::to('index.php?r=product')] ,
+            [ 'label' => 'Заказы', 'url' => Url::to('index.php?r=answer')]
+        ]],
+        $menuItems[] = ['label' => 'Контент', 'items' =>  [
+            [ 'label' => 'Cладер Менеджер', 'url' => Url::to('index.php?r=slider')] ,
+            [ 'label' => 'Разделы меню', 'url' => Url::to('index.php?r=request')],
+            [ 'label' => 'Менеджер страниц', 'url' => Url::to('index.php?r=request')]
+
+        ]],
+
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
