@@ -1,12 +1,76 @@
+.body-content{
+    display: flex;
+    flex-flow: row;
+}
 .item_box{
     display: flex;
     flex-flow: row;
 }
 .index_slider{
-    padding: 10px;
+    position: relative;
+    max-width: 888px;
+    width: 100%;
+    left: 4%;
+    bottom: -2%;
+    padding-top: 1%;
+    max-height: 507px;
+    height: 100%;
+}
+.carousel-control{
+    width: 0!important;
+
+}
+.carousel-caption{
+    color: black;
+}
+.slider_image{
+    max-width: 491px!important;
+}
+.slider_text_container{
+    position: relative;
+    max-width: 370px;
+    left: 54%;
+    bottom: 93px;
 }
 .index_catalog{
     padding: 10px;
+    max-width: 25%;
+    display: block;
+    box-sizing: border-box;
+    flex-basis: 100%;
+    max-width: 100%;
+
+    z-index: 55;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12),0 0 3px rgba(0,0,0,.06);
+    background: #f7f7f7;
+    width: 260px;
+    position: relative;
+}
+.catalog__item_box{
+    padding: 10px;
+    max-width: 25%;
+    display: block;
+    box-sizing: border-box;
+    flex-basis: 100%;
+    max-width: 100%;
+
+    z-index: 2;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12),0 0 3px rgba(0,0,0,.06);
+    background: #f7f7f7;
+
+    position: relative;
+    left: 70%;
+    display: none;
+    }
+.catalog__item{
+    padding: 0 0 0 15px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-size: 14px;
+    transition: background .1s ease-in-out;
+
 }
 .header_top{
     background: #f7f7f7;
@@ -113,13 +177,14 @@ button{
     bottom: -17%;
 }
 .search_form {
-    width: 47%;
+    width: 48%;
     display: flex;
     flex-flow: row;
     border-radius: 3px;
     position: relative;
-
+    left: 5%;
     bottom: -17%;
+
 }
 .search_catalog_show{
     position: relative;
@@ -139,4 +204,45 @@ button{
 }
 
 
+#nav{
+    height: 70px;
+}
+#nav ul{
+    list-style: none;
+}
 
+#nav > ul > li{
+    width: 180px;
+    position: relative;
+    max-width: 25%;
+
+}
+
+#nav li a{
+    display: block;
+    color: #f7f7f7;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12),0 0 3px rgba(0,0,0,.06);
+    background: #f7f7f7;
+    width: 217px;
+    padding: 8px;
+}
+#nav li a:hover{
+    background: white;
+}
+
+
+#nav li .second{
+    display: none;
+    position: absolute;
+    left: 406%;
+    top: 0%;
+    z-index: 55;
+}
+
+#nav li:hover .second{
+    display: block;
+}
+
+#nav li li{
+    width: 180px;
+}

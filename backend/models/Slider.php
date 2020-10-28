@@ -23,6 +23,7 @@ class Slider extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $imageFile;
     public static function tableName()
     {
         return 'slider';
@@ -47,15 +48,31 @@ class Slider extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'slider_id' => 'Slider ID',
-            'item_name' => 'Item Name',
-            'url' => 'Url',
-            'title' => 'Title',
-            'item_body' => 'Item Body',
-            'position' => 'Position',
-            'posted' => 'Posted',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'slider_id' => 'Принадлежность',
+            'item_name' => 'Название',
+            'url' => 'Ссылка',
+            'title' => 'Заголовок',
+            'item_body' => 'Содержимое',
+            'position' => 'Порядковый номер',
+            'posted' => 'Опубликовать',
+            'created_at' => 'Создан',
+            'updated_at' => 'Изменен',
         ];
+    }
+    public function upload()
+    {
+        if ($this->validate()) {
+
+            //$this->item_name= $this->imageFile->baseName . '.' . $this->imageFile->extension;
+
+            if($this->imageFile){
+                $this->url =Url::base( true) . '/uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+                $this->save();
+                $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

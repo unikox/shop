@@ -9,8 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string|null $name
- * @property int|null $id1s
- * @property int|null $parentid1s
+ * @property string|null $id1s
+ * @property string|null $parentid1s
  *
  * @property Catproduct $parentid1s0
  * @property Catproduct[] $catproducts
@@ -32,8 +32,7 @@ class Catproduct extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id1s', 'parentid1s'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'id1s', 'parentid1s'], 'string', 'max' => 255],
             [['id1s'], 'unique'],
             [['parentid1s'], 'exist', 'skipOnError' => true, 'targetClass' => Catproduct::className(), 'targetAttribute' => ['parentid1s' => 'id1s']],
         ];
@@ -80,5 +79,17 @@ class Catproduct extends \yii\db\ActiveRecord
     public function getProducts()
     {
         return $this->hasMany(Product::className(), ['catid1s' => 'id1s']);
+    }
+    public function getparentsCats(){
+
+        $sql="SELECT * FROM `catproduct` WHERE  `parentid1s` is NULL";
+        $res_cats = Yii::$app->db->createCommand($sql)->queryAll();
+        return $res_cats;
+    }
+    public function getCatsItem(){
+
+        $sql="SELECT * FROM `catproduct` WHERE  `parentid1s` is not NULL";
+        $res_cats = Yii::$app->db->createCommand($sql)->queryAll();
+        return $res_cats;
     }
 }

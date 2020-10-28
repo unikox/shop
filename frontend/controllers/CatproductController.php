@@ -1,19 +1,18 @@
 <?php
 
-namespace backend\controllers;
+namespace app\controllers;
 
 use Yii;
-use app\models\Slider;
-use app\models\SliderSearch;
+use app\models\Catproduct;
+use app\models\CatproductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
- * SliderController implements the CRUD actions for Slider model.
+ * CatproductController implements the CRUD actions for Catproduct model.
  */
-class SliderController extends Controller
+class CatproductController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,12 +30,12 @@ class SliderController extends Controller
     }
 
     /**
-     * Lists all Slider models.
+     * Lists all Catproduct models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new SliderSearch();
+        $searchModel = new CatproductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,28 +45,11 @@ class SliderController extends Controller
     }
 
     /**
-     * Displays a single Slider model.
+     * Displays a single Catproduct model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpload($CKEditorFuncNum)
-    {
-        $file = UploadedFile::getInstanceByName('upload');
-        if($file) {
-            $file_model = new File;
-            if ($file_model->upload($file) && $file_model->save()) {
-                return '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction("' . $CKEditorFuncNum . '", "' . $file_model->getUrl() . '","")</script>';
-            } else {
-                return "Возникла ошибка загрузки файла\n";
-
-            }
-        }
-        else{
-            return " Файл не загружен\n";
-        }
-
-    }
     public function actionView($id)
     {
         return $this->render('view', [
@@ -76,13 +58,13 @@ class SliderController extends Controller
     }
 
     /**
-     * Creates a new Slider model.
+     * Creates a new Catproduct model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Slider();
+        $model = new Catproduct();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -94,7 +76,7 @@ class SliderController extends Controller
     }
 
     /**
-     * Updates an existing Slider model.
+     * Updates an existing Catproduct model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -114,7 +96,7 @@ class SliderController extends Controller
     }
 
     /**
-     * Deletes an existing Slider model.
+     * Deletes an existing Catproduct model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -128,19 +110,18 @@ class SliderController extends Controller
     }
 
     /**
-     * Finds the Slider model based on its primary key value.
+     * Finds the Catproduct model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Slider the loaded model
+     * @return Catproduct the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Slider::findOne($id)) !== null) {
+        if (($model = Catproduct::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
 }

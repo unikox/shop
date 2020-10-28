@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use mihaildev\ckeditor\CKEditor;
 /* @var $this yii\web\View */
 /* @var $model app\models\Slider */
 /* @var $form yii\widgets\ActiveForm */
@@ -20,15 +20,20 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'item_body')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'imageFile')->fileInput() ?>
+
+    <?= $form->field($model, 'item_body')->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'inline' => false, //по умолчанию false
+            'filebrowserUploadUrl' => '/slider/upload'
+        ],
+    ]);
+    ?>
 
     <?= $form->field($model, 'position')->textInput() ?>
 
-    <?= $form->field($model, 'posted')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'posted')->CheckBox() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

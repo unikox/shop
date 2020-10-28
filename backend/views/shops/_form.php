@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'tel')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
-    
+
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
