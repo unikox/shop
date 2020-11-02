@@ -137,3 +137,14 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.fotobox{
+    display: flex;
+    flex-flow:row;
+}
+.fotoitems{
+
+    max-height:400px;
+    padding: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 0 3px rgba(0,0,0,.06);
+    border-radius: 15px;
+}

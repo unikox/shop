@@ -2,23 +2,43 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use app\models\Productimage;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
+<?php
+    $img = new Productimage();
+    $imgbox = $img->getImagesList($model->id);
+?>
 <div class="product-form">
+
+
+
+    <div class="fotobox">
+        <div class="fotobox_title">
+            <h3>Снимки товара:</h3>
+        </div>
+        <div class="foto_contaier">
+            <?php
+            foreach ($imgbox as $img){
+                echo "<img class='fotoitems' src='" . $img['url']."'>";
+            }
+            ?>
+        </div>
+
+        <?= Html::Button('Добавить снимок товара', ['class' => 'btn btn-success']) ?>
+    </div>
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
 
-    <?= $form->field($model, 'updated_at')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id1s')->textInput() ?>
+
 
     <?= $form->field($model, 'catid1s')->textInput() ?>
 
@@ -37,7 +57,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'cost')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить товар', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

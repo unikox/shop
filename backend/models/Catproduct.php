@@ -46,9 +46,9 @@ class Catproduct extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Категория',
             'id1s' => 'Id1s',
-            'parentid1s' => 'Parentid1s',
+            'parentid1s' => 'Родитель',
         ];
     }
 

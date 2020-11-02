@@ -56,8 +56,9 @@ use yii\helpers\Url;
                         'url' => '#',
                         'items' => [
                             ['label' => 'Cладер Менеджер', 'icon' => 'file-code-o', 'url' => ['/slider'],],
-                            ['label' => 'Разделы меню', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Менеджер страниц', 'icon' => 'file-code-o', 'url' => ['/gii'],],
+                            ['label' => 'Разделы меню', 'icon' => 'file-code-o', 'url' => ['/articles'],],
+                            ['label' => 'Менеджер страниц', 'icon' => 'file-code-o', 'url' => ['/pages'],],
+                            ['label' => 'Менеджер изображений', 'icon' => 'file-code-o', 'url' => ['/productimage'],],
                             ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
 
                         ],

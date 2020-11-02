@@ -1,9 +1,12 @@
 <?php
 use app\models\catproduct;
 use frontend\widgets\siteComponents\pubCatalog;
-use frontend\widgets\siteComponents\pubCatalogz;
+use frontend\widgets\siteComponents\pubProductList;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
 use frontend\widgets\siteComponents\pubSlider;
 use app\models\Slider;
+use yii\widgets\DetailView;
 
 $this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\yii\web\JqueryAsset::className()]]);
@@ -46,6 +49,17 @@ $slider = new Slider();
         </div>
 
     </div>
+<?= pubProductList::widget([
+    'dataProvider' => $dataProvider,
+    'itemView' => '_product__item',
+    'summary' => false,
+    'viewParams' => [
+        'fullView' => true,
+        'context' => 'main-page',
+
+    ],
+]);
+?>
     <div class="advantage__box">
         <div class="advantage__header">НАШИ ПРЕИМУЩЕСТВА</div>
         <div class="advantage__body">
@@ -100,11 +114,100 @@ $slider = new Slider();
         </div>
     </div>
 </div>
+
 <div class="map__box">
     <div class="moneyshop24_map">
         <div id="map" style="width:880px; height:300px; bottom:17%"></div>
     </div>
 </div>
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+
+<?php /*
+
+        //'id',
+        //'created_at',
+        //'updated_at',
+        'name',
+        'id1s',
+        //'catid1s',
+        //'description:ntext',
+        'serial',
+        'barcode',
+        //'shop1sid',
+        'product_state',
+        //'product_status',
+        //'cost',
+ */?>
 
 <script type="text/javascript">
     var parent = <?= $parent?>;
