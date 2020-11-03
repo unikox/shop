@@ -5,17 +5,6 @@ use yii\helpers\Url;
 
     <section class="sidebar">
 
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image ">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
-            </div>
-            <div class="pull-left info">
-                <p>Alexander Pierce</p>
-
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
 
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
@@ -33,9 +22,8 @@ use yii\helpers\Url;
             [
                 'options' => ['class' => 'sidebar-menu tree ', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' => 'Настройки портала:', 'options' => ['class' => 'header']],
+
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Магазин',
@@ -59,7 +47,7 @@ use yii\helpers\Url;
                             ['label' => 'Разделы меню', 'icon' => 'file-code-o', 'url' => ['/articles'],],
                             ['label' => 'Менеджер страниц', 'icon' => 'file-code-o', 'url' => ['/pages'],],
                             ['label' => 'Менеджер изображений', 'icon' => 'file-code-o', 'url' => ['/productimage'],],
-                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
+
 
                         ],
                     ],

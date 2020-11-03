@@ -139,12 +139,23 @@ a.desc:after {
 }
 .fotobox{
     display: flex;
-    flex-flow:row;
+    flex-flow:column;
 }
 .fotoitems{
 
     max-height:400px;
     padding: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 0 3px rgba(0,0,0,.06);
+    border-radius: 15px;
+}
+.foto_contaier{
+    display: flex;
+    flex-flow: row;
+}
+.img__control{
+    padding: 5px;
+    background: rgb(37, 36, 36);
+    background: rgba(51, 48, 48, 0.68);
     box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 0 3px rgba(0,0,0,.06);
     border-radius: 15px;
 }
