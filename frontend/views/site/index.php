@@ -1,5 +1,5 @@
 <?php
-use app\models\catproduct;
+use app\models\Catproduct;
 use frontend\widgets\siteComponents\pubCatalog;
 use frontend\widgets\siteComponents\pubProductList;
 use yii\widgets\ListView;
@@ -17,7 +17,7 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\
 /* @var $this yii\web\View */
 
 $this->title = 'Комиссионный магазин «MoneyShop24»';
-    $cats = new catproduct;
+    $cats = new Catproduct;
     //var_dump($cats->getparentsCats());
     //var_dump($cats->getCatsItem());
     $parent = json_encode($cats->getparentsCats());
