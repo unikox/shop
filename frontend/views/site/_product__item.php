@@ -11,8 +11,6 @@ use yii\helpers\HtmlPurifier;
 use app\models\Productimage;
 ?>
 <?
-$img = new Productimage();
-$imgbox = $img->getImagesList($model->id);
 
 ?>
 <div class="product__item">
@@ -22,6 +20,8 @@ $imgbox = $img->getImagesList($model->id);
 
     ?>
 <?php
+$img = new Productimage();
+$imgbox = $img->getImagesList($model->id);
     echo "<div class='product_list_image'>";
 
     foreach ($imgbox as $img){
