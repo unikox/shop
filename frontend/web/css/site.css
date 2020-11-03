@@ -377,6 +377,7 @@ button{
     margin: 12px;
     height: 285px;
     padding: 52px;
+    justify-content: space-between;
 
 }
 .product_name {
@@ -392,5 +393,25 @@ button{
     position: absolute;
     bottom: -5%;
     left: 27.5%;
-
+}
+.product_list_image{
+    display: flex;
+    flex-flow: row;
+}
+.product_list_image_item{
+    max-width: 64px;
+    padding: 3%;
+    border-radius: 15px;
+}
+.product_cost_box{
+    display: flex;
+    flex-flow: row;
+}
+.product_cost{
+    font-size: 18px;
+    font-weight: 700;
+}
+.product_valute{
+    font-size: 18px;
+    font-weight: 700;
 }

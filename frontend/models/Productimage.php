@@ -58,4 +58,11 @@ class Productimage extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Product::className(), ['id' => 'ownerid']);
     }
+    public function getImagesList($id)
+    {
+
+        $sql = 'SELECT `url` from `productimage` WHERE `ownerid` = ' . $id;
+        $search_res = Yii::$app->db->createCommand($sql)->queryAll();
+        return $search_res;
+    }
 }
