@@ -37,9 +37,6 @@ if($model->product_state){
     <?php if($model->cost >0){?>
         <div class="product_cost_box"><div class="product_cost"><?= Html::encode($model->cost) ?></div><div class="product_valute">Руб.</div></div>
     <?php } ?>
-<?php
-    echo "<button class='btn btn-success'>Подробнее</button>";
-?>
-
+    <?= Html::a('Подробнее', ['/product/view', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
 
 </div>
