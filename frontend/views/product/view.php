@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use frontend\widgets\siteComponents\pubProductDetails;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -9,34 +9,21 @@ use yii\widgets\DetailView;
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="product-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
 
-    <?= DetailView::widget([
+
+
+    <?= pubProductDetails::widget([
         'model' => $model,
-        'attributes' => [
-            'id',
-            'created_at',
-            'updated_at',
-            'name',
-            'id1s',
-            'catid1s0.name',
-            'description:ntext',
-            'serial',
-            'barcode',
-            'shop1sid',
-            'product_state',
-            'product_status',
-            'cost',
-        ],
-    ]) ?>
+        'images' => $imagelist,
+    ]) ;
 
-    <p>
-        <?= Html::a('Добавить в корзину', ['buy', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+    ?>
 
-    </p>
+
 </div>

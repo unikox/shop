@@ -58,18 +58,18 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'name' => 'Name',
+            'created_at' => 'Создан',
+            'updated_at' => 'Изменен',
+            'name' => 'Наименование',
             'id1s' => 'Id1s',
             'catid1s' => 'Catid1s',
-            'description' => 'Description',
-            'serial' => 'Serial',
-            'barcode' => 'Barcode',
-            'shop1sid' => 'Shop1sid',
-            'product_state' => 'Product State',
-            'product_status' => 'Product Status',
-            'cost' => 'Cost',
+            'description' => 'Описание',
+            'serial' => 'Серийный номер',
+            'barcode' => 'Штрихкод',
+            'shop1sid' => 'Код категории',
+            'product_state' => 'Состояние',
+            'product_status' => 'Продан',
+            'cost' => 'Цена',
         ];
     }
 
