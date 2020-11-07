@@ -36,6 +36,8 @@ $slider = new Slider();
             'parents' =>$cats->getparentsCats(),
             'items' =>$cats->getCatsItem()
         ]);
+        //var_dump($cats->getparentsCats());
+        //var_dump($cats->getCatsItem());
         ?>
 
             <div class="index_slider">

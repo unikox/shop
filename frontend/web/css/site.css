@@ -494,8 +494,6 @@ button{
     padding-left: 10px;
     display: block;
 
-
-
 }
 .product__price_botton_buy{
     width: 100%;
@@ -522,4 +520,10 @@ button{
     border: 1px solid #89BF15;
     border-radius: 5px;
     transition: all .1s ease-in-out;
+}
+
+.cat_items{
+    position: relative;
+    left: 250px;
+    width: 300px;
 }

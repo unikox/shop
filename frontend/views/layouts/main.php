@@ -10,6 +10,8 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
+use yii\helpers\Url;
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -60,8 +62,8 @@ AppAsset::register($this);
                 </a>
             </div>
             <div class="search_form">
-                    <form class="search_field" onsubmit="return false;" am-dropdown-header="search">
-                            <input type="text" data-value="" value="" placeholder="Я хочу купить...">
+                    <form class="search_field" method="get">
+                            <input type="text" name="ProductSearch[name]="  placeholder="Я хочу купить...">
                         <button class="search_button">Найти</button>
                     </form>
                     <div am-dropdown-content="search" align="left">
@@ -93,6 +95,7 @@ AppAsset::register($this);
     <div class="container">
 
     </div>
+
 </footer>
 
 <?php $this->endBody() ?>
