@@ -26,7 +26,9 @@ class pubProductDetails extends Widget
     public function init()
     {
         parent::init();
-
+        if (!$this->images){
+            $this->images[0]['url'] = 'images/blank_img.png';
+        }
         foreach ($this->images as $sitems) {
 
             $content_item = [
@@ -76,6 +78,19 @@ class pubProductDetails extends Widget
                         echo "</div>";
                         echo "<button class='product__price_botton_buy' id='".$this->model->id."'>Купить</button>";
                         echo "<button class='product__price_botton_bundle' id='".$this->model->id."'>Забронировать</button>";
+                    echo "</div>";
+                    echo "<div class='product__caption_container'>";
+                        echo "<div class='product__description_caption'>Доставка"."</div>";
+                        echo "<div class='product__description_body'>" . '<a href="#">Выбрать город</a>' . "</div>";
+                        echo "<div class='product__description_body'>" . '<a href="#">Как работает доставка?</a>' . "</div>";
+                    echo "</div>";
+                    echo "<div class='product__caption_container'>";
+                        echo "<div class='product__description_caption'>Кредит"."</div>";
+                        echo "<div class='product__description_body'>" . '<a href="#">Онлайн подтверждение за 5 минут</a>' . "</div>";
+                    echo "</div>";
+                    echo "<div class='product__caption_container'>";
+                        echo "<div class='product__description_caption'>Задать вопрос по товару"."</div>";
+                        echo "<div class='product__description_body'>" . '<a href="#">Напишите нам</a>' . "</div>";
                     echo "</div>";
                 echo "</div>";
             echo "</div>";

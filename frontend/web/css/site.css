@@ -375,9 +375,10 @@ button{
     flex-basis: 100%;
 
     max-width: 200px;
-    margin: 12px;
+    margin-bottom: 12px;
+    padding: 3px;
     height: 285px;
-    padding: 52px;
+
     justify-content: space-between;
 
 }
@@ -400,9 +401,9 @@ button{
     flex-flow: row;
 }
 .product_list_image_item{
-    max-width: 64px;
-    padding: 3%;
-    border-radius: 15px;
+    max-width: 200px;
+    max-height: 125px;
+
 }
 .product_cost_box{
     display: flex;
@@ -475,6 +476,11 @@ button{
     position: relative;
     right: -20%;
 }
+.product__caption_container{
+    position: relative;
+    right: -20%;
+
+}
 .product__cost_box{
     display: flex;
     flex-flow: row;
@@ -522,8 +528,20 @@ button{
     border-radius: 5px;
     transition: all .1s ease-in-out;
 }
+.product__price_botton_bundle:hover{
+    background: #89BF15;
+    color: #fff;
+}
 
 .cat_items{
 
     width: 300px;
+}
+.btn-details{
+    border: 1px solid #89bf15;
+    color: #89bf15!important;
+}
+.btn-details:hover{
+    background: #89bf15;
+    color: white!important;
 }

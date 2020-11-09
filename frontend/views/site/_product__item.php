@@ -9,11 +9,10 @@
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 use app\models\Productimage;
-
+use yii\bootstrap\Carousel;
+$ITM = array();
 ?>
-<?
 
-?>
 <div class="product__item">
 
 
@@ -23,13 +22,32 @@ use app\models\Productimage;
     <?php
     $img = new Productimage();
     $imgbox = $img->getImagesList($model->id);
+
     echo "<div class='product_list_image'>";
     if (!$imgbox){
         $imgbox[0]['url'] = 'images/blank_img.png';
     }
     foreach ($imgbox as $img) {
-        echo "<img  class='product_list_image_item' src='" . $img['url'] . "'>";
+        //echo "<img  class='product_list_image_item' src='" . $img['url'] . "'>";
+        $content_item = [
+            'content' => '<img class="product_list_image_item" src="' . $img['url'] . ' "/>',
+
+        ];
+        array_push($ITM, $content_item);
     }
+
+    echo Carousel::widget([
+        'items' => $ITM,
+        'options' => ['class' => 'carousel slide carousel-fade ', 'data-interval' => '3000', 'data-wrap' => 'true'],
+
+        'controls' => [
+            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+        ]
+    ]);
+
+
+
     echo "</div>";
     if ($model->product_state) {
         // echo "Состояние: ".$model->product_state;
@@ -43,6 +61,6 @@ use app\models\Productimage;
             <div class="product_valute">Руб.</div>
         </div>
     <?php } ?>
-    <?= Html::a('Подробнее', ['/product/view', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Подробнее', ['/product/view', 'id' => $model->id], ['class' => 'btn btn-details']) ?>
 
 </div>
