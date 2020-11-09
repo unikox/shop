@@ -62,6 +62,27 @@ $slider = new Slider();
     ],
 ]);
 ?>
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
     <div class="advantage__box">
         <div class="advantage__header">НАШИ ПРЕИМУЩЕСТВА</div>
         <div class="advantage__body">

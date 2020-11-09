@@ -227,7 +227,8 @@ button{
     padding: 8px;
 }
 #nav li a:hover{
-    background: white;
+    background: #89BF15;
+    color: #fff!important;
 }
 
 
@@ -523,7 +524,6 @@ button{
 }
 
 .cat_items{
-    position: relative;
-    left: 250px;
+
     width: 300px;
 }
