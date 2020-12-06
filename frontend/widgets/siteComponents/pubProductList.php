@@ -1,22 +1,21 @@
 <?php
 
 namespace frontend\widgets\siteComponents;
+
 use Closure;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\BaseListView;
 
-
 class pubProductList extends BaseListView
 {
-
-   // public $groupCounter = 0;
-   // public $groupTriger = false;
+    // public $groupCounter = 0;
+    // public $groupTriger = false;
     public $itemOptions = [];
     /**
      * @var string|callable the name of the view for rendering each data item, or a callback (e.g. an anonymous function)
-     * for rendering each data item. If it specifies a view name, the following variables will
-     * be available in the view:
+     *                      for rendering each data item. If it specifies a view name, the following variables will
+     *                      be available in the view:
      *
      * - `$model`: mixed, the data model
      * - `$key`: mixed, the key value associated with the data item
@@ -34,7 +33,7 @@ class pubProductList extends BaseListView
     public $itemView;
     /**
      * @var array additional parameters to be passed to [[itemView]] when it is being rendered.
-     * This property is used only when [[itemView]] is a string representing a view name.
+     *            This property is used only when [[itemView]] is a string representing a view name.
      */
     public $viewParams = [];
     /**
@@ -43,13 +42,14 @@ class pubProductList extends BaseListView
     public $separator = "\n";
     /**
      * @var array the HTML attributes for the container tag of the list view.
-     * The "tag" element specifies the tag name of the container element and defaults to "div".
+     *            The "tag" element specifies the tag name of the container element and defaults to "div".
+     *
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = ['class' => 'product__view'];
     /**
      * @var Closure an anonymous function that is called once BEFORE rendering each data model.
-     * It should have the following signature:
+     *              It should have the following signature:
      *
      * ```php
      * function ($model, $key, $index, $widget)
@@ -62,6 +62,7 @@ class pubProductList extends BaseListView
      *
      * The return result of the function will be rendered directly.
      * Note: If the function returns `null`, nothing will be rendered before the item.
+     *
      * @see renderBeforeItem
      * @since 2.0.11
      */
@@ -73,14 +74,15 @@ class pubProductList extends BaseListView
      *
      * The return result of the function will be rendered directly.
      * Note: If the function returns `null`, nothing will be rendered after the item.
+     *
      * @see renderAfterItem
      * @since 2.0.11
      */
     public $afterItem;
 
-
     /**
      * Renders all data models.
+     *
      * @return string the rendering result
      */
     public function renderItems()
@@ -89,21 +91,19 @@ class pubProductList extends BaseListView
         $keys = $this->dataProvider->getKeys();
         $rows = [];
         foreach (array_values($models) as $index => $model) {
+            /*          $this->groupCounter++;
+                      if($this->groupCounter == 3){
+                          $this->groupTriger = true;
 
-  /*          $this->groupCounter++;
-            if($this->groupCounter == 3){
-                $this->groupTriger = true;
-
-                array_push($rows, "<div class=\"product_group\">");
-                //.'<div class="product_group">';
-                $this->groupCounter = 0;
-                var_dump($rows);
-            }
+                          array_push($rows, "<div class=\"product_group\">");
+                          //.'<div class="product_group">';
+                          $this->groupCounter = 0;
+                          var_dump($rows);
+                      }
 */
             $key = $keys[$index];
             if (($before = $this->renderBeforeItem($model, $key, $index)) !== null) {
                 $rows[] = $before;
-
             }
 
             $rows[] = $this->renderItem($model, $key, $index);
@@ -111,13 +111,13 @@ class pubProductList extends BaseListView
             if (($after = $this->renderAfterItem($model, $key, $index)) !== null) {
                 $rows[] = $after;
             }
-/*            if($this->groupTriger){
-                $this->groupTriger = false;
-                array_push($rows, "</div>");
-                //$rows = $rows .'</div>';
+            /*            if($this->groupTriger){
+                            $this->groupTriger = false;
+                            array_push($rows, "</div>");
+                            //$rows = $rows .'</div>';
 
-            }
-*/
+                        }
+            */
         }
 
         return implode($this->separator, $rows);
@@ -128,9 +128,11 @@ class pubProductList extends BaseListView
      * If [[beforeItem]] is not a closure, `null` will be returned.
      *
      * @param mixed $model the data model to be rendered
-     * @param mixed $key the key value associated with the data model
-     * @param int $index the zero-based index of the data model in the model array returned by [[dataProvider]].
+     * @param mixed $key   the key value associated with the data model
+     * @param int   $index the zero-based index of the data model in the model array returned by [[dataProvider]].
+     *
      * @return string|null [[beforeItem]] call result or `null` when [[beforeItem]] is not a closure
+     *
      * @see beforeItem
      * @since 2.0.11
      */
@@ -148,9 +150,11 @@ class pubProductList extends BaseListView
      * If [[afterItem]] is not a closure, `null` will be returned.
      *
      * @param mixed $model the data model to be rendered
-     * @param mixed $key the key value associated with the data model
-     * @param int $index the zero-based index of the data model in the model array returned by [[dataProvider]].
+     * @param mixed $key   the key value associated with the data model
+     * @param int   $index the zero-based index of the data model in the model array returned by [[dataProvider]].
+     *
      * @return string|null [[afterItem]] call result or `null` when [[afterItem]] is not a closure
+     *
      * @see afterItem
      * @since 2.0.11
      */
@@ -165,16 +169,15 @@ class pubProductList extends BaseListView
 
     /**
      * Renders a single data model.
+     *
      * @param mixed $model the data model to be rendered
-     * @param mixed $key the key value associated with the data model
-     * @param int $index the zero-based index of the data model in the model array returned by [[dataProvider]].
+     * @param mixed $key   the key value associated with the data model
+     * @param int   $index the zero-based index of the data model in the model array returned by [[dataProvider]].
+     *
      * @return string the rendering result
      */
     public function renderItem($model, $key, $index)
     {
-
-
-
         if ($this->itemView === null) {
             $content = $key;
         } elseif (is_string($this->itemView)) {

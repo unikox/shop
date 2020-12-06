@@ -2,12 +2,12 @@
 
 namespace backend\controllers;
 
-use Yii;
 use app\models\Shops;
 use app\models\ShopsSearch;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * ShopsController implements the CRUD actions for Shops model.
@@ -31,6 +31,7 @@ class ShopsController extends Controller
 
     /**
      * Lists all Shops models.
+     *
      * @return mixed
      */
     public function actionIndex()
@@ -46,8 +47,11 @@ class ShopsController extends Controller
 
     /**
      * Displays a single Shops model.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
@@ -60,6 +64,7 @@ class ShopsController extends Controller
     /**
      * Creates a new Shops model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     *
      * @return mixed
      */
     public function actionCreate()
@@ -78,8 +83,11 @@ class ShopsController extends Controller
     /**
      * Updates an existing Shops model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
@@ -98,8 +106,11 @@ class ShopsController extends Controller
     /**
      * Deletes an existing Shops model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
@@ -112,8 +123,11 @@ class ShopsController extends Controller
     /**
      * Finds the Shops model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return Shops the loaded model
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)

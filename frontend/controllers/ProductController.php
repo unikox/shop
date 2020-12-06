@@ -2,16 +2,14 @@
 
 namespace frontend\controllers;
 
-use Yii;
 use app\models\Product;
 use app\models\Productimage;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 class ProductController extends Controller
 {
-
     public function behaviors()
     {
         return [
@@ -24,7 +22,6 @@ class ProductController extends Controller
         ];
     }
 
-
     public function actionView($id)
     {
         $img = new Productimage();
@@ -35,7 +32,6 @@ class ProductController extends Controller
             'imagelist' => $imglist,
         ]);
     }
-
 
     protected function findModel($id)
     {

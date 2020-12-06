@@ -2,21 +2,19 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "slider".
  *
- * @property int $id
- * @property int|null $slider_id
+ * @property int         $id
+ * @property int|null    $slider_id
  * @property string|null $item_name
  * @property string|null $url
  * @property string|null $title
  * @property string|null $item_body
- * @property int|null $position
- * @property int|null $posted
- * @property int|null $created_at
- * @property int|null $updated_at
+ * @property int|null    $position
+ * @property int|null    $posted
+ * @property int|null    $created_at
+ * @property int|null    $updated_at
  */
 class Slider extends \yii\db\ActiveRecord
 {
@@ -58,9 +56,11 @@ class Slider extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
         ];
     }
-    public function getSliderItems($item_name){
 
-        $resItems = $this->find()->where(['item_name' => $item_name,'posted'=>1])->asArray()->orderBy('position')->all();
+    public function getSliderItems($item_name)
+    {
+        $resItems = $this->find()->where(['item_name' => $item_name, 'posted' => 1])->asArray()->orderBy('position')->all();
+
         return $resItems;
     }
 }

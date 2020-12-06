@@ -2,12 +2,12 @@
 
 namespace backend\controllers;
 
-use Yii;
 use app\models\Catproduct;
 use app\models\CatproductSearch;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * CatproductController implements the CRUD actions for Catproduct model.
@@ -31,6 +31,7 @@ class CatproductController extends Controller
 
     /**
      * Lists all Catproduct models.
+     *
      * @return mixed
      */
     public function actionIndex()
@@ -46,8 +47,11 @@ class CatproductController extends Controller
 
     /**
      * Displays a single Catproduct model.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
@@ -60,6 +64,7 @@ class CatproductController extends Controller
     /**
      * Creates a new Catproduct model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     *
      * @return mixed
      */
     public function actionCreate()
@@ -78,8 +83,11 @@ class CatproductController extends Controller
     /**
      * Updates an existing Catproduct model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
@@ -98,8 +106,11 @@ class CatproductController extends Controller
     /**
      * Deletes an existing Catproduct model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
@@ -112,8 +123,11 @@ class CatproductController extends Controller
     /**
      * Finds the Catproduct model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return Catproduct the loaded model
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)

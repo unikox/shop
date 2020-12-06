@@ -2,27 +2,24 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "product".
  *
- * @property int $id
- * @property int|null $created_at
- * @property int|null $updated_at
- * @property string|null $name
- * @property int|null $id1s
- * @property int $catid1s
- * @property string|null $description
- * @property string|null $serial
- * @property int|null $barcode
- * @property int $shop1sid
- * @property string|null $product_state
- * @property int|null $product_status
- * @property float|null $cost
- *
- * @property Catproduct $catid1s0
- * @property Shops $shop1s
+ * @property int            $id
+ * @property int|null       $created_at
+ * @property int|null       $updated_at
+ * @property string|null    $name
+ * @property int|null       $id1s
+ * @property int            $catid1s
+ * @property string|null    $description
+ * @property string|null    $serial
+ * @property int|null       $barcode
+ * @property int            $shop1sid
+ * @property string|null    $product_state
+ * @property int|null       $product_status
+ * @property float|null     $cost
+ * @property Catproduct     $catid1s0
+ * @property Shops          $shop1s
  * @property Productimage[] $productimages
  */
 class Product extends \yii\db\ActiveRecord

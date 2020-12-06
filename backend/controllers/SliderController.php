@@ -2,12 +2,12 @@
 
 namespace backend\controllers;
 
-use Yii;
 use app\models\Slider;
 use app\models\SliderSearch;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
 /**
@@ -32,6 +32,7 @@ class SliderController extends Controller
 
     /**
      * Lists all Slider models.
+     *
      * @return mixed
      */
     public function actionIndex()
@@ -47,27 +48,26 @@ class SliderController extends Controller
 
     /**
      * Displays a single Slider model.
-     * @param integer $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpload($CKEditorFuncNum)
     {
         $file = UploadedFile::getInstanceByName('upload');
-        if($file) {
-            $file_model = new File;
+        if ($file) {
+            $file_model = new File();
             if ($file_model->upload($file) && $file_model->save()) {
-                return '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction("' . $CKEditorFuncNum . '", "' . $file_model->getUrl() . '","")</script>';
+                return '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction("'.$CKEditorFuncNum.'", "'.$file_model->getUrl().'","")</script>';
             } else {
                 return "Возникла ошибка загрузки файла\n";
-
             }
-        }
-        else{
+        } else {
             return " Файл не загружен\n";
         }
-
     }
+
     public function actionView($id)
     {
         return $this->render('view', [
@@ -78,6 +78,7 @@ class SliderController extends Controller
     /**
      * Creates a new Slider model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     *
      * @return mixed
      */
     public function actionCreate()
@@ -96,8 +97,11 @@ class SliderController extends Controller
     /**
      * Updates an existing Slider model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
@@ -116,8 +120,11 @@ class SliderController extends Controller
     /**
      * Deletes an existing Slider model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
@@ -130,8 +137,11 @@ class SliderController extends Controller
     /**
      * Finds the Slider model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return Slider the loaded model
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
@@ -142,5 +152,4 @@ class SliderController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
 }

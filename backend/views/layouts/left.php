@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+
 ?>
 <aside class="main-sidebar ">
 
@@ -20,7 +21,7 @@ use yii\helpers\Url;
 
         <?= dmstr\widgets\Menu::widget(
             [
-                'options' => ['class' => 'sidebar-menu tree ', 'data-widget'=> 'tree'],
+                'options' => ['class' => 'sidebar-menu tree ', 'data-widget' => 'tree'],
                 'items' => [
                     ['label' => 'Настройки портала:', 'options' => ['class' => 'header']],
 
@@ -30,30 +31,26 @@ use yii\helpers\Url;
                         'icon' => 'shopping-cart',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Менеджер точек продаж', 'icon' => 'file-code-o', 'url' => ['/shops'],],
-                            ['label' => 'Категории товара', 'icon' => 'dashboard', 'url' => Url::to('index.php?r=catproduct'),],
-                            ['label' => 'Товары', 'shopping-bag' => 'dashboard', 'url' => Url::to('index.php?r=product'),],
-                            ['label' => 'Заказы', 'icon' => 'shopping-cart', 'url' => Url::to('index.php?r=product'),],
-
+                            ['label' => 'Менеджер точек продаж', 'icon' => 'file-code-o', 'url' => ['/shops']],
+                            ['label' => 'Категории товара', 'icon' => 'dashboard', 'url' => Url::to('index.php?r=catproduct')],
+                            ['label' => 'Товары', 'shopping-bag' => 'dashboard', 'url' => Url::to('index.php?r=product')],
+                            ['label' => 'Заказы', 'icon' => 'shopping-cart', 'url' => Url::to('index.php?r=product')],
                         ],
                     ],
                     [
-
                         'label' => 'Контент',
                         'icon' => 'gears',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Cладер Менеджер', 'icon' => 'file-code-o', 'url' => ['/slider'],],
-                            ['label' => 'Разделы меню', 'icon' => 'file-code-o', 'url' => ['/articles'],],
-                            ['label' => 'Менеджер страниц', 'icon' => 'file-code-o', 'url' => ['/pages'],],
-                            ['label' => 'Менеджер изображений', 'icon' => 'file-code-o', 'url' => ['/productimage'],],
-
-
+                            ['label' => 'Cладер Менеджер', 'icon' => 'file-code-o', 'url' => ['/slider']],
+                            ['label' => 'Разделы меню', 'icon' => 'file-code-o', 'url' => ['/articles']],
+                            ['label' => 'Менеджер страниц', 'icon' => 'file-code-o', 'url' => ['/pages']],
+                            ['label' => 'Менеджер изображений', 'icon' => 'file-code-o', 'url' => ['/productimage']],
                         ],
                     ],
                 ],
             ]
-        ) ?>
+        ); ?>
 
     </section>
 

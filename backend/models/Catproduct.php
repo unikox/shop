@@ -2,19 +2,16 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "catproduct".
  *
- * @property int $id
- * @property string|null $name
- * @property int|null $id1s
- * @property int|null $parentid1s
- *
- * @property Catproduct $parentid1s0
+ * @property int          $id
+ * @property string|null  $name
+ * @property int|null     $id1s
+ * @property int|null     $parentid1s
+ * @property Catproduct   $parentid1s0
  * @property Catproduct[] $catproducts
- * @property Product[] $products
+ * @property Product[]    $products
  */
 class Catproduct extends \yii\db\ActiveRecord
 {

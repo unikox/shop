@@ -1,6 +1,5 @@
 <?php
 
-use yii\helpers\Html;
 use frontend\widgets\siteComponents\pubProductDetails;
 
 /* @var $this yii\web\View */
@@ -21,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= pubProductDetails::widget([
         'model' => $model,
         'images' => $imagelist,
-    ]) ;
+    ]);
 
     ?>
 

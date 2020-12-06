@@ -2,22 +2,19 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "shops".
  *
- * @property int $id
- * @property int|null $created_at
- * @property int|null $updated_at
- * @property int $shop1sid
+ * @property int         $id
+ * @property int|null    $created_at
+ * @property int|null    $updated_at
+ * @property int         $shop1sid
  * @property string|null $name
  * @property string|null $city
  * @property string|null $area
  * @property string|null $tel
  * @property string|null $address
- *
- * @property Product[] $products
+ * @property Product[]   $products
  */
 class Shops extends \yii\db\ActiveRecord
 {

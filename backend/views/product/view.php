@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title); ?></h1>
 
 
     <?= DetailView::widget([
@@ -33,16 +33,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'product_status',
             'cost',
         ],
-    ]) ?>
+    ]); ?>
 
     <p>
-        <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']); ?>
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Действительно удалить этот товар?',
                 'method' => 'post',
             ],
-        ]) ?>
+        ]); ?>
     </p>
 </div>

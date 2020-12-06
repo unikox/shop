@@ -15,29 +15,29 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'id'); ?>
 
-    <?= $form->field($model, 'slider_id') ?>
+    <?= $form->field($model, 'slider_id'); ?>
 
-    <?= $form->field($model, 'item_name') ?>
+    <?= $form->field($model, 'item_name'); ?>
 
-    <?= $form->field($model, 'url') ?>
+    <?= $form->field($model, 'url'); ?>
 
-    <?= $form->field($model, 'title') ?>
+    <?= $form->field($model, 'title'); ?>
 
-    <?php // echo $form->field($model, 'item_body') ?>
+    <?php // echo $form->field($model, 'item_body')?>
 
-    <?php // echo $form->field($model, 'position') ?>
+    <?php // echo $form->field($model, 'position')?>
 
-    <?php // echo $form->field($model, 'posted') ?>
+    <?php // echo $form->field($model, 'posted')?>
 
-    <?php // echo $form->field($model, 'created_at') ?>
+    <?php // echo $form->field($model, 'created_at')?>
 
-    <?php // echo $form->field($model, 'updated_at') ?>
+    <?php // echo $form->field($model, 'updated_at')?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']); ?>
+        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']); ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -2,21 +2,19 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "slider".
  *
- * @property int $id
- * @property int|null $slider_id
+ * @property int         $id
+ * @property int|null    $slider_id
  * @property string|null $item_name
  * @property string|null $url
  * @property string|null $title
  * @property string|null $item_body
- * @property int|null $position
- * @property int|null $posted
- * @property int|null $created_at
- * @property int|null $updated_at
+ * @property int|null    $position
+ * @property int|null    $posted
+ * @property int|null    $created_at
+ * @property int|null    $updated_at
  */
 class Slider extends \yii\db\ActiveRecord
 {
@@ -24,6 +22,7 @@ class Slider extends \yii\db\ActiveRecord
      * {@inheritdoc}
      */
     public $imageFile;
+
     public static function tableName()
     {
         return 'slider';
@@ -59,17 +58,18 @@ class Slider extends \yii\db\ActiveRecord
             'updated_at' => 'Изменен',
         ];
     }
+
     public function upload()
     {
         if ($this->validate()) {
-
             //$this->item_name= $this->imageFile->baseName . '.' . $this->imageFile->extension;
 
-            if($this->imageFile){
-                $this->url =Url::base( true) . '/uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+            if ($this->imageFile) {
+                $this->url = Url::base(true).'/uploads/'.$this->imageFile->baseName.'.'.$this->imageFile->extension;
                 $this->save();
-                $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+                $this->imageFile->saveAs('uploads/'.$this->imageFile->baseName.'.'.$this->imageFile->extension);
             }
+
             return true;
         } else {
             return false;

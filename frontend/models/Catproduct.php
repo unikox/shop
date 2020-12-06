@@ -7,14 +7,13 @@ use Yii;
 /**
  * This is the model class for table "catproduct".
  *
- * @property int $id
- * @property string|null $name
- * @property string|null $id1s
- * @property string|null $parentid1s
- *
- * @property Catproduct $parentid1s0
+ * @property int          $id
+ * @property string|null  $name
+ * @property string|null  $id1s
+ * @property string|null  $parentid1s
+ * @property Catproduct   $parentid1s0
  * @property Catproduct[] $catproducts
- * @property Product[] $products
+ * @property Product[]    $products
  */
 class Catproduct extends \yii\db\ActiveRecord
 {
@@ -80,16 +79,20 @@ class Catproduct extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Product::className(), ['catid1s' => 'id1s']);
     }
-    public function getparentsCats(){
 
-        $sql="SELECT * FROM `catproduct` WHERE  `parentid1s` is NULL";
+    public function getparentsCats()
+    {
+        $sql = 'SELECT * FROM `catproduct` WHERE  `parentid1s` is NULL';
         $res_cats = Yii::$app->db->createCommand($sql)->queryAll();
+
         return $res_cats;
     }
-    public function getCatsItem(){
 
-        $sql="SELECT * FROM `catproduct` WHERE  `parentid1s` is not NULL";
+    public function getCatsItem()
+    {
+        $sql = 'SELECT * FROM `catproduct` WHERE  `parentid1s` is not NULL';
         $res_cats = Yii::$app->db->createCommand($sql)->queryAll();
+
         return $res_cats;
     }
 }

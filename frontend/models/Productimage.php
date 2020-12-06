@@ -7,12 +7,11 @@ use Yii;
 /**
  * This is the model class for table "productimage".
  *
- * @property int $id
- * @property int|null $ownerid
+ * @property int         $id
+ * @property int|null    $ownerid
  * @property string|null $name
  * @property string|null $url
- *
- * @property Product $owner
+ * @property Product     $owner
  */
 class Productimage extends \yii\db\ActiveRecord
 {
@@ -58,11 +57,12 @@ class Productimage extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Product::className(), ['id' => 'ownerid']);
     }
+
     public function getImagesList($id)
     {
-
-        $sql = 'SELECT `url` from `productimage` WHERE `ownerid` = ' . $id;
+        $sql = 'SELECT `url` from `productimage` WHERE `ownerid` = '.$id;
         $search_res = Yii::$app->db->createCommand($sql)->queryAll();
+
         return $search_res;
     }
 }

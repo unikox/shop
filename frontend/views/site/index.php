@@ -1,27 +1,21 @@
 <?php
 use app\models\Catproduct;
+use app\models\Slider;
 use frontend\widgets\siteComponents\pubCatalog;
 use frontend\widgets\siteComponents\pubProductList;
-use yii\widgets\ListView;
-use yii\data\ActiveDataProvider;
 use frontend\widgets\siteComponents\pubSlider;
-use app\models\Slider;
-use yii\widgets\DetailView;
 
-$this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-
-
-
+$this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 /* @var $this yii\web\View */
 
 $this->title = 'Комиссионный магазин «MoneyShop24»';
-    $cats = new Catproduct;
+    $cats = new Catproduct();
     //var_dump($cats->getparentsCats());
     //var_dump($cats->getCatsItem());
     $parent = json_encode($cats->getparentsCats());
-    $items= json_encode($cats->getCatsItem());
+    $items = json_encode($cats->getCatsItem());
 
 $slider = new Slider();
 ?>
@@ -33,8 +27,8 @@ $slider = new Slider();
 
         <?php
         echo pubCatalog::widget([
-            'parents' =>$cats->getparentsCats(),
-            'items' =>$cats->getCatsItem()
+            'parents' => $cats->getparentsCats(),
+            'items' => $cats->getCatsItem(),
         ]);
         //var_dump($cats->getparentsCats());
         //var_dump($cats->getCatsItem());
@@ -43,8 +37,7 @@ $slider = new Slider();
             <div class="index_slider">
                 <?php
                 echo pubSlider::widget([
-                    'slider_items' =>$slider -> getSliderItems('General'),
-
+                    'slider_items' => $slider->getSliderItems('General'),
                 ]);
                 ?>
             </div>
@@ -58,7 +51,6 @@ $slider = new Slider();
     'viewParams' => [
         'fullView' => true,
         'context' => 'main-page',
-
     ],
 ]);
 ?>
@@ -233,8 +225,8 @@ $slider = new Slider();
  */?>
 
 <script type="text/javascript">
-    var parent = <?= $parent?>;
-    var item = <?= $items?>;
+    var parent = <?= $parent; ?>;
+    var item = <?= $items; ?>;
     console.log(parent);
     console.log(item);
     for()

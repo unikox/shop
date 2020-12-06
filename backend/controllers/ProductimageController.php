@@ -2,12 +2,12 @@
 
 namespace backend\controllers;
 
-use Yii;
 use app\models\Productimage;
 use app\models\ProductimageSearch;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * ProductimageController implements the CRUD actions for Productimage model.
@@ -31,6 +31,7 @@ class ProductimageController extends Controller
 
     /**
      * Lists all Productimage models.
+     *
      * @return mixed
      */
     public function actionIndex()
@@ -46,8 +47,11 @@ class ProductimageController extends Controller
 
     /**
      * Displays a single Productimage model.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
@@ -60,6 +64,7 @@ class ProductimageController extends Controller
     /**
      * Creates a new Productimage model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     *
      * @return mixed
      */
     public function actionCreate()
@@ -78,8 +83,11 @@ class ProductimageController extends Controller
     /**
      * Updates an existing Productimage model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
@@ -98,8 +106,11 @@ class ProductimageController extends Controller
     /**
      * Deletes an existing Productimage model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return mixed
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
@@ -112,8 +123,11 @@ class ProductimageController extends Controller
     /**
      * Finds the Productimage model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     *
+     * @param int $id
+     *
      * @return Productimage the loaded model
+     *
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
